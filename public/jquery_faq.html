@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+    </style>
+</head>
+<body>
+
+<h1 id="codeup"> Codeup Assignment </h1>
+
+<p>This is a test of JQuery proficiency</p>
+
+<ul>
+    <li>Abiliene</li>
+    <li>Big Bend</li>
+    <li>Choke Canyon</li>
+</ul>
+
+<ul>
+    <li>Davis</li>
+    <li>Enchanted Rock</li>
+    <li>Grand Canyon</li>
+</ul>
+
+<ul>
+    <li>We need to know this for work</li>
+    <li>We need to know this for professional development</li>
+    <li>This stuff is fun</li>
+</ul>
+
+
+<h2>Example Page</h2>
+    <div class="important">
+        <h3>NOTICE</h3>
+        <p> This new Thundercat is fire. </p>
+        <p>This is an important message!</p>
+    </div>
+
+    <div class="not-important">
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet, incididunt ut <span class="important">labore et dolore magna aliqua.</span>, quis ut aliquip ex ea commodo.</p>
+    </div>
+
+    <p class="important">This is also very important.</p>
+
+
+<h2 id="test"> Test ID </h2>
+
+<div>We are working hard, all day, every day.</div>
+
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    var contents = $('#test').html();
+    alert(contents);
+
+ $(document).ready(function() {
+            $('.important').css('background-color', '#FF0');
+        });
+
+ $('li').each(function(index) {
+    if (index % 2 !== 0) {
+        $(this).css('background-color', '#FF0');
+    }
+});
+
+   $(document).ready(function() {
+            $('.important').click(function() {
+                $('.important').fadeToggle(5000);
+            });
+            $('.not-important').click(function() {
+                $('.not-important').fadeToggle();
+            });
+        });
+
+});
+
+    // $(document).ready(function() {
+    // alert( 'The DOM has finished loading!' );
+
+    // $(document).ready(function() {
+    //     var contents = $('codeup').html();
+    //     alert(contents);
+
+
+</script>
+
+
+</body>
+</html>

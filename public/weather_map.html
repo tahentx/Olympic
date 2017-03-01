@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Weather Map API</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+    <style type="text/css">
+        
+        .container {
+            height: 200px;
+            width: 240px;
+            border-color: black;
+        }   
+
+        .day {
+            border: 1px solid grey;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+    <div>
+    <h2>Three Day Forecast</h2>
+    <div id="weather"></div>
+    </div>
+    <div>
+        
+        <label for="latitude">Latitude:</label>
+        <input type="text" id="latitude" name="latitude">
+
+        <label for="longitude">Longitude:</label>
+        <input type="text" id="longitude" name="longitude">
+
+        <button id="submit">Submit</button>
+    
+    </div>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+    
+$(document).ready(function(){    
+
+    "use strict";
+
+    var APPID = "7f8e3aa0aad113510e0c1eaafd1c17b8";
+    var url = "http://api.openweathermap.org/data/2.5/forecast/daily"; 
+
+    var forecast 
+    function getWeather () {
+        $.get(url, {
+            APPID: APPID,
+            q: "San Antonio",
+            cnt: 3,
+            units: "imperial"
+        }).fail(function(data, status) {
+            alert("Failed to load:" + status);
+        }).done (function(data){   
+            console.log(data);
+            postThreeDayForecast(data);
+        })
+    }
+
+    function postThreeDayForecast (data) {
+        data.list.forEach(function(day){
+            var htmlData = "";
+            
+            // day one forecast data
+
+            htmlData += "<div class='day'><h3>" + day.pressure + "</h3>";
+            htmlData += "<p>" + day.speed + "</p>";
+            htmlData += "<p>" + day.humidity + "</p>";
+            htmlData += "<p>" + day.temp.max + "</p>";
+            htmlData += "<p>" + day.clouds + "</p></div>";
+
+            $("#weather").append(htmlData);
+        })
+    }
+          
+
+$("#submit").click(function(coordinates){
+
+    $.get(url, {
+        APPID: APPID,
+        lat: $("#latitude").val(),
+        lon: $("#longitude").val(), 
+        cnt: 3,
+        units: "imperial"
+    }).fail(function(data, status) {
+        alert("Failed to load:" + status);
+    }).done (function(data){
+        $("#weather").html("");   
+        console.log(data);
+        postThreeDayForecast(data);
+    })
+  
+});
+
+    getWeather();
+
+});
+
+</script>
+
+
+</body>
+</html>

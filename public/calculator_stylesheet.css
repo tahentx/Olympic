@@ -1,0 +1,136 @@
+
+
+{
+background-color:light grey;
+}
+
+.body {
+    width: 475px;
+    height:410px;
+    margin: 2px;
+    padding: 5px;
+}
+
+.wrapper {
+    width: 630px;
+    margin:0 auto;
+}
+
+.button {
+
+     background-color:white;
+     width: 160px;
+     margin:0 auto;
+
+    }
+
+.row1, .row2, .row3 {
+    clear:both;
+
+}
+
+#window {
+	background-color: black;
+	width: 388px;
+	height: 100px;
+	border:5px solid black;
+	color: white;
+}
+
+#cell1,#cell2,#cell3,#cell4 {
+    width:100px;
+    height:100px;
+    float: left;
+    text-align: middle;
+    display: flex;
+    align-items: center;
+    vertical-align: center;
+    border:3px solid black;
+    border-radius: 25px;
+	background-color: beige
+}
+
+#cell5,#cell6, #cell7,#cell8 {
+    width:100px;
+    height:100px;
+	float: left;
+	text-align: center;
+	display: flex;
+    align-items: center;
+    border:3px solid black;
+    border-radius: 25px;
+    background-color: beige
+}
+
+#cell9,#cell10,#cell11,#cell12 {
+    width:100px;
+    height:100px;
+    float: left;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    border:3px solid black;
+    border-radius: 25px;
+	background-color: beige
+}
+
+#cell10,#cell11,#cell12,#cell13 {
+    width:100px;
+    height:100px;
+    float: left;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    border:3px solid black;
+    border-radius: 25px;
+	background-color: beige
+}
+
+
+#cell14,#cell15,#cell16 {
+    width:100px;
+    height:100px;
+    float: left;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    border:3px solid black;
+    border-radius: 25px;
+	background-color: beige
+}
+
+
+#cell17 {
+	width: 205px;
+	height: 100px;
+	float: left;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    border:3px solid black;
+    border-radius: 25px;
+	background-color: beige
+}
+
+
+#cell18, #cell19 {
+    width:100px;
+    height:100px;
+    float: left;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    border:3.95px solid black;
+    border-radius: 25px;
+	background-color: beige
+}
+
+
+#cell4,#cell8,#cell12,#cell16,#cell19 {
+	background-color: orange
+}
+

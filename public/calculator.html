@@ -1,0 +1,118 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Calculator Project</title>
+        <link rel="stylesheet" type="text/css" href="/calculator_stylesheet.css">
+    </head>
+
+    <body>
+    <h1>Calculator Exercise</h1>
+
+    <div class="wrapper">
+
+    <div class="body">
+
+    <div class="top">
+        
+    <div class="display"></div>
+
+    <div class="keys"></div>
+
+    <div id="window">0</div>
+
+            <div class="Row2">
+                <button id="cell1">AC</button>
+
+                <button id="cell2">X/-</button>
+
+                <button id="cell3">%</button>
+
+                <button id="cell4">Div</button>
+            </div>
+
+            <div class="Row3">
+
+                <button id="cell5">7</button>
+
+                <button id="cell6">8</button>
+                
+                <button id="cell7">9</button>
+                
+                <button id="cell8">X</button>
+            </div>
+
+
+            <div class="Row4">
+                <button id="cell9">4</button>
+
+                <button id="cell10">5</button>
+                
+                <button id="cell11">6</button>
+                
+                <button id="cell12">-</button>
+            </div>
+
+
+            <div class="Row5">
+                <button id="cell13">1</button>
+                
+                <button id="cell14">2</button>
+                
+                <button id="cell15">3</button>
+                
+                <button id="cell16">+</button>
+
+
+            <div class="Row6">
+                <button id="cell17">0</button>
+                
+                <button id="cell18">.</button>
+
+                <button id="cell19">=</button>
+            </div>
+
+
+         </div>
+
+        <script>
+
+        'use strict';
+
+        // leaving a zero placeholder in the window
+
+        var display = document.getElementById("window"); 
+
+        console.log(display.innerHTML);
+
+        window.innerHTML = "0";
+
+        var caseTest= document.getElementsByClassName('case');
+
+        console.log(caseTest[0]);
+
+
+        // function displayNumber () {
+        //     if (middleDisplay.value == "" && leftDisplay != "") {
+        //         leftDisplay.value += this.innerText;
+        //     } else {
+        //         rightDisplay.value += this.innerText;
+        //     }
+
+        // }
+
+        // for (var i = 0; i < numbers.length; i++) {
+        //     numbers [i].addEventListener ("click", displayNumber);
+
+        //     console.log("added an event listener to the following element: ");
+        //     console.log(numbers[i]);
+        // }
+
+        // var display = document.getElementByClassName("display")
+
+
+
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AJAX Blog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+</head>
+<body>
+<h1>Blog Entries</h1>
+<div id="posts"></div>    
+
+
+
+<script>
+    
+    $(document).ready(function(){    
+
+    "use strict";
+
+    function getBlogContent () {
+
+    $.get("data/blog.json", function()){
+        alert("success");
+    });
+        request.done(){
+            function(addBlogContent);
+        }
+    });
+        request.fail(){
+            alert("Sorry, we could not retrieve the data.")
+        }
+
+
+
+
+//     .done
+//     .fail
+
+//     function addBlogContent () {
+//         var blogPost = "";
+//         posts.forEach(function())
+//     }
+// $(#posts).append(getBlogData);
+
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+</body>
+</html>
