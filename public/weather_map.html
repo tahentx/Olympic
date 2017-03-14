@@ -8,6 +8,7 @@
     <style type="text/css">
         
         .container {
+            color: light blue;
             border-color: black;
         }   
 
@@ -30,7 +31,8 @@
 
     <main class="container">
     <div>
-    <h2>Three Day Forecast</h2>
+    <h2>Weather Application</h2>
+    <h3>San Antonio, Texas</h3>
     <div id="weather" class="row"></div>
     </div>
     <div>
@@ -47,7 +49,7 @@
 
     <div id="map-canvas"></div>
     <div id="favorite">Placeholder 1</div>
-    <div id="reason">Placeholder 2</div>
+    <div id="reason"></div>
     <div></div>
 
     </main>
@@ -79,16 +81,15 @@ $(document).ready(function(){
     }
 
     function postThreeDayForecast (data) {
+        
         data.list.forEach(function(day){
             var htmlData = "";
-            
-            // day one forecast data
-
+    
             htmlData += "<div class='day col-xs-4'><h3>" +  day.temp.max + "</h3>";
-            htmlData += "<p> Windspeed" + day.speed + "</p>";
-            htmlData += "<p> humidity" + day.humidity + "</p>";
-            htmlData += "<p> pressure" + day.pressure + "</p>";
-            htmlData += "<p> clouds" + day.clouds + "</p></div>";
+            htmlData += "<p> Windspeed:  " + day.speed + "</p>";
+            htmlData += "<p> humidity:  " + day.humidity + "</p>";
+            htmlData += "<p> pressure:  " + day.pressure + "</p>";
+            htmlData += "<p> clouds:  " + day.clouds + "</p></div>";
 
             $("#weather").append(htmlData);
         })
@@ -110,11 +111,12 @@ $("#submit").click(function(coordinates){
         console.log(data);
         postThreeDayForecast(data);
     })
-  
+
 });
 
     getWeather();
 
+$("main").css("light blue");
 
 });
 
@@ -161,11 +163,27 @@ $("#submit").click(function(coordinates){
             position: codeup,
             map: map
        
-        });    
+        });
+
+        //Event listeners added for interactivity
+
+        map.addListener('center_changed', function() {
+        // 3 seconds after the center of the map has changed, pan back to the
+        // marker.
+        window.setTimeout(function() {
+          map.panTo(marker.getPosition());
+        }, 3000);
+      });
+
+        marker.addListener('click', function() {
+        map.setZoom(8);
+        map.setCenter(marker.getPosition());
+      });    
+
         var infoMsg = document.getElementById("reason")
                 // Create a new infoWindow object with content
         var infowindow = new google.maps.InfoWindow({
-            content: "What Starts Here Changes The World   " + infoMsg.innerHTML 
+            content: "Find weather in your area" + infoMsg.innerHTML 
         });
 
         // Open the window using our map and marker
