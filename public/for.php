@@ -14,10 +14,11 @@ do {
 
 } while (!is_numeric($endingNumber));
 
+fwrite(STDOUT, 'Input an incrementing value');
+$userIncrement = trim(fgets(STDIN));
 
-for ($i = $startNumber; $i <= $endingNumber; $i += 5) {
+for ($i = $startNumber; $i <= $endingNumber; $i += $userIncrement) {
 	echo "\$i has a value of {$i}\n";
 }
-
 
 ?>
