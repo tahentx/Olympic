@@ -1,14 +1,21 @@
 <?php
 
-fwrite(STDOUT, 'Input a starting number');
+do {
 
-$startNumber = trim(fgets(STDIN));
+	fwrite(STDOUT, 'Input a starting number');
+	$startNumber = trim(fgets(STDIN));
 
-fwrite(STDOUT, 'Input an ending number');
+} while (!is_numeric($startNumber));
 
-$endingNumber = trim(fgets(STDIN));
+do {
 
-for ($i = $startNumber; $i <= $endingNumber; $i += 1) {
+	fwrite(STDOUT, 'Input an ending number');
+	$endingNumber = trim(fgets(STDIN));
+
+} while (!is_numeric($endingNumber));
+
+
+for ($i = $startNumber; $i <= $endingNumber; $i += 5) {
 	echo "\$i has a value of {$i}\n";
 }
 
