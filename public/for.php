@@ -1,14 +1,15 @@
 <?php
 
-fwrite(STDOUT, 'Input a number');
+fwrite(STDOUT, 'Input a starting number');
 
-$x = fgets(STDIN);
-$y = fgets(STDIN);
+$startNumber = trim(fgets(STDIN));
 
-// x is starting number; y is ending number
+fwrite(STDOUT, 'Input an ending number');
 
-for ($x = 0, $x =< $y, $y === 100) {
-	$x++;
+$endingNumber = trim(fgets(STDIN));
+
+for ($i = $startNumber; $i <= $endingNumber; $i += 1) {
+	echo "\$i has a value of {$i}\n";
 }
 
 
