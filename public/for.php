@@ -2,14 +2,14 @@
 
 do {
 
-	fwrite(STDOUT, 'Input a starting number');
+	fwrite(STDOUT, 'Input a starting number' . PHP_EOL);
 	$startNumber = trim(fgets(STDIN));
 
 } while (!is_numeric($startNumber));
 
 do {
 
-	fwrite(STDOUT, 'Input an ending number');
+	fwrite(STDOUT, 'Input an ending number' . PHP_EOL);
 	$endingNumber = trim(fgets(STDIN));
 
 } while (!is_numeric($endingNumber));

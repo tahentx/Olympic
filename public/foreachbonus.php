@@ -56,32 +56,39 @@
 			    'WY' => 'Wyoming'
 			  ];
 
-$findx = 'x';
-$finda = 'a';
-$findvowel = 'a,e,i,o,u';
 
-$pos = strpos($states, $findx);
-$posit = strpos($states,$finda);
-$position = strpos($states, $findvowel);
+foreach ($states as $abbreviation => $place) {
+
+	$findx = 'x';
+	$pos = strpos($place, $findx);
+	
+	if ($pos !== false) {
+		echo $place . PHP_EOL;
+	}
+
+}
 
 foreach ($states as $abbreviation => $place) {
 	
-	if ($pos === false) {
-		echo $place;
+	$finda = 'a';
+	$posit = strpos($place,$finda);
+	
+	if ($posit !== false) {
+		echo $place . PHP_EOL;
 	}
 
-	if ($posit === true) {
-		echo $place;
-	}
+}
 
-	if ($position === true) {
-		echo $place;
-	}
+echo "States that begin with a vowel:" . PHP_EOL;
 
+foreach ($states as $abbreviation => $place) {
+	
+	$vowels = ['a','e','i', 'o', 'A', 'E', 'I', 'O', 'U'];
+
+	if(in_array($place[0], $vowels)){
+		echo "\t" . $abbreviation . " : " . $place . PHP_EOL;
+	}
+	
 };
-
-
-
-
 
 ?>

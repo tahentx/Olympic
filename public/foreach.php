@@ -23,5 +23,4 @@ foreach ($things as $thing) {
 	}
 }
 
-
 ?>
