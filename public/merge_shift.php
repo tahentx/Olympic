@@ -20,14 +20,30 @@ function namesinCommon($namesResult,$compareResult) {
 	
 	foreach ($namesResult as $name) {
 		if (array_search($name, $compareResult) !== false){
-		echo $name;
+		echo $name . PHP_EOL;
 
 	} else {
-		echo "It's not here" . PHP_EOL;	
+		echo "Indices don't match" . PHP_EOL;	
 		}
 	}
 }
-
 namesinCommon($names, $compare);
 
+//====
+
+	array_push($names, "Tommy");
+	array_unshift($names, "Fred");
+
+	array_push($compare, "Tommy");
+	array_unshift($compare, "Doug");
+	array_unshift($compare, "Reggie");
+
+function combine_arrays($names,$compare) {
+	print_r($names);
+	print_r($compare);
+}
+
+echo combine_arrays($names, $compare);
+
 ?>
+
