@@ -10,11 +10,11 @@ $namesResult = array_search($query, $names, $strict = true);
 
 $compareResult = array_search($query, $compare, $strict = true);
 
-// if ($result !== false) {
-// 	echo $names[$namesResult] . PHP_EOL;
-// } else {
-// 	echo "Your input is not in our database" . PHP_EOL;
-// }
+if ($result !== false) {
+	echo $names[$namesResult] . PHP_EOL;
+} else {
+	echo "Your input is not in our database" . PHP_EOL;
+}
 
 function namesinCommon($namesResult,$compareResult) {
 	
@@ -27,7 +27,7 @@ function namesinCommon($namesResult,$compareResult) {
 		}
 	}
 }
-
 namesinCommon($names, $compare);
+
 
 ?>

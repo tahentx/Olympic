@@ -47,25 +47,17 @@ foreach ($orders as $order) {
 // output information about all the orders for delivery
 foreach ($orders as $index => $order) {
     // if the order is not for delivery skip it
-    if ($order['delivery'] === false) {
-        continue;
+    if (! $order['delivery']) {
+        break;
     }
-    echo "This pizza had '{$order['toppings']}' . '' . had a '{$order['crust']} . 'cost {$order['price']} . '' .and was a delivery order" . PHP_EOL;
-}
 
-//     // human friendly order number
-//     $orderNumber = $orders = 1;
-    
-// foreach ($orders as $order) {
-//     foreach ($orders as $key => $value) {
-//         echo "This order number is" . ''. $key . PHP_EOL;
-//     }
-// }
-//     // turn our price in cents into a price in dollars and add a '$'
-    
-//     $formattedPrice = '$' . (float) $order['price'] / 100;
+    // human friendly order number
+    $orderNumber = $index + 1;
+    // turn our price in cents into a price in dollars and add a '$'
+    $formattedPrice = '$' . (float) $order['price'] / 100;
 
-//     echo "------------- Order #" . "$orderNumber --------------" . PHP_EOL;
+    
+    echo "------------- Order #" . "$orderNumber --------------" . PHP_EOL;
 
 //     // display all the toppings
 //     echo 'Toppings:' . PHP_EOL;
