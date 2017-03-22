@@ -1,3 +1,10 @@
-Jack Blank|1231231234
-Jane Doe|2342342345
-Sam Space|3453453456
+Roger Federer|423-652-1870
+Pete Sampras|772-756-7809
+Kobe Bryant|234-123-4321
+Ken Chenault|234-234-2343
+Tim Grover|983-834-4572
+Charles Oakley|823-752-5750
+Russ Westbrook|234-555-2222
+Ryan Leslie|999-999-2131
+Donald Glover|333-222-3421
+Neal Brennan|444-444-4444
