@@ -2,21 +2,49 @@
 
 // $filename = 'contacts.txt';
 
-// function showContacts($file) {
 
-// 	$handle = fopen($file, 'r');
+function readFile($file) {
+
+	$handle = fopen($file, 'r');
 	
-// 	$contents = fread($handle, filesize($file));
+	$contents = fread($handle, filesize($file));
 	
-// 	fclose($handle);
+	fclose($handle);
 
-//     return $contents;
+    return $contents;
 
-// }
+}
 
-// echo showContacts($filename);
+$content = readFile($filename);
 
-// -----
+
+function createContactsArray($content) {
+
+	$mainContactArray = explode("/n" , $content);
+
+	return $mainContactArray;
+
+}
+
+$mainArray = createContactsArray($content);
+
+function createOuterArray ($mainArray) {
+	$outerArray = explode("/n", $mainArray);
+	return $outerArray;
+}
+
+$outerArray = createOuterArray($mainArray);
+
+var_dump($outerArray);
+
+function createInnerArray () {
+
+}
+
+
+
+var_dump($mainArray);
+
 
 function createNewContact() {
 
@@ -40,33 +68,52 @@ function createNewContact() {
 
 }
 
-echo createNewContact();
+$newContactInput = createNewContact();
 
 
-// // ---
+function addNewContact($filename, $newContactInput) {
 
-// function addContacts ($file) {
+	$handle = fopen($filename, 'a');
 
-// 	$handle = fopen($file, 'a');
- 	
-//  	fwrite($handle, $newContact);
+	fwrite($handle, PHP_EOL . $newContactInput);
+
+	fclose($handle);
+
+}
+
+addNewContact($filename, $newContactInput);
+
+function searchContacts($mainArray){
+
+	fwrite(STDOUT, 'Who are you looking for?');
+
+	$query = fgets(STDIN);
+
+	$result = in_array($query, $mainArray, true);
+
+		if ($result == true) {
+			
+			echo $mainArray[$result];
+		
+		}	else {
+		
+			echo "That contact is not saved. Would you like to add it to your list?" . PHP_EOL; 
 	
-// 	echo  . PHP_EOL;
-// 	fclose($handle);
+	}			
+}
 
-// }
+searchContacts($mainArray);
+
+function deleteContacts($delete) {
+	
+	$delete = fgets(STDIN);
+
+	$handle = fopen($filename, 'w');
+
+	fclose($handle);	
+
+}
 
 
-// // ---
 
-
-
-// function searchContacts () {
-// // fread; one of the native search functions should work
-// }
-
-// function deleteContacts () {
-// // fwrite with the "w"	
-// }
-
-// ?>
+?>

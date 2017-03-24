@@ -47,17 +47,20 @@ foreach ($orders as $order) {
 // output information about all the orders for delivery
 foreach ($orders as $index => $order) {
     // if the order is not for delivery skip it
-    if (! $order['delivery']) {
-        break;
-    }
 
-    // human friendly order number
-    $orderNumber = $index + 1;
-    // turn our price in cents into a price in dollars and add a '$'
-    $formattedPrice = '$' . (float) $order['price'] / 100;
+    if ($order['delivery'] == !true) {
+        continue;
+    } else {
+        print_r($order);
+    }
+}
+    // // human friendly order number
+    // $orderNumber = $order[] + 1;
+    // // turn our price in cents into a price in dollars and add a '$'
+    // $formattedPrice = '$' . (float) $order['price'] / 100;
 
     
-    echo "------------- Order #" . "$orderNumber --------------" . PHP_EOL;
+    // echo "------------- Order #" . "$orderNumber --------------" . PHP_EOL;
 
 //     // display all the toppings
 //     echo 'Toppings:' . PHP_EOL;
@@ -73,4 +76,7 @@ foreach ($orders as $index => $order) {
 //     }
     
 //     echo "Total: $formattedPrice" . PHP_EOL;
-// // }
+
+//     }
+
+?>
