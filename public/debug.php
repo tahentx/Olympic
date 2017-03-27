@@ -54,21 +54,22 @@ foreach ($orders as $index => $order) {
         print_r($order);
     }
 }
-    // // human friendly order number
-    // $orderNumber = $order[] + 1;
-    // // turn our price in cents into a price in dollars and add a '$'
-    // $formattedPrice = '$' . (float) $order['price'] / 100;
+
+    // human friendly order number
+    $orderNumber = $order[] + 1;
+    // turn our price in cents into a price in dollars and add a '$'
+    $formattedPrice = '$' . (float) $order['price'] / 100;
 
     
-    // echo "------------- Order #" . "$orderNumber --------------" . PHP_EOL;
+    echo "------------- Order #" . "$orderNumber --------------" . PHP_EOL;
 
-//     // display all the toppings
-//     echo 'Toppings:' . PHP_EOL;
-//     foreach ($order['toppings'] as $topping) {
-//         echo "  - $topping" . PHP_EOL;
-//     }
+    // display all the toppings
+    echo 'Toppings:' . PHP_EOL;
+    foreach ($order['toppings'] as $topping) {
+        echo "  - $topping" . PHP_EOL;
+    }
 
-//     echo "Crust: {$order['crust']}" . PHP_EOL;
+    echo "Crust: {$order['crust']}" . PHP_EOL;
 
 //     // if the order has special instructions display them
 //     if ($order['special instructions']) {

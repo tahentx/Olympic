@@ -3,13 +3,13 @@
 
 function favoriteThingDisplay (){
 
-$favorites = ['West Coast Get Down', 'Pickup Basketball', 'Reading', 'Whisler old fashioned', 'Steve Coll and James Kwak'];
+$data = ['West Coast Get Down', 'Pickup Basketball', 'Reading', 'Whisler old fashioned', 'Steve Coll and James Kwak'];
 
- return $favorites;
+ return $data;
 
 }
 
-favoriteThingDisplay();
+extract(favoriteThingDisplay());
 
 ?>
  
@@ -27,8 +27,8 @@ favoriteThingDisplay();
 	    <ol>
 	    <?php
 
-	    foreach (favoriteThingDisplay() as $item) { ?>
-		<li> <?PHP echo $item; ?></li>
+	    foreach (favoriteThingDisplay() as $data) { ?>
+		<li> <?PHP echo $data; ?></li>
 
 	    <?PHP } ?>
 	    

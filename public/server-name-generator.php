@@ -3,32 +3,20 @@
 $message = 'Hello Codeup';
 
 
+function bestPlayers (){
 
-function randomNoun (){
+$data = [];
 
-$noun = ['papa', 'knucklehead', 'priest', 'diver', 'saint', 'chief', 'captain', 'runner', 'gunner', 'playboy'];
+$data['favoritePlayer'] = 'Kawhi';
+$data['runnerUp'] = 'Russ';
 
-	$randomName = array_rand($noun);
-	return $noun[$randomName];
-}
+$data['instruments'] = ['piano','sax', 'guitar', 'drums']; 
 
-function randomAdjective() {
-
-$adjectives = ['sloppy','fairweather', 'drunk', 'shady', 'musty', 'lightweight', 'lowdown', 'basic', 'malicious', 'feisty'];
-
-	$randomAdjective = array_rand($adjectives);
-
-
-	return $adjectives[$randomAdjective];
+return $data;
 
 }
 
-
-function randomNameOutput() {
-	return randomAdjective(). " " . randomNoun();
-}
-
-
+extract(bestPlayers());
 
 ?>
  
@@ -43,28 +31,15 @@ function randomNameOutput() {
 </style>
 <body>
     <h1>Server Name Generator</h1>
-    <div>
-
-    <div class="box" id="red"></div>
-<div class="box" id="orange"></div>
-<div class="box" id="yellow">570-590 nm</div>
-<div class="box" id="green">495-570 nm</div>
-<div class="box" id="blue">450-495 nm</div>
-<div class="box" id="violet">380-450 nm</div>
-
-
-
-
-
-	    <button id = "refresh" Refresh></button>
-
+    <div>s
 	<p>
 	    <ol>
-	    <?php
 
-		echo randomNameOutput();
-	    
-	     ?>
+	    This is my favorite <?= $instruments[0]?> on the Graves album!
+	    <?php foreach($instruments as $instrument): ?>
+	    	<li><?= $instrument; ?></li>
+	    <?php endforeach; ?>
+
 	    </ol>
 	</p>
 	</div>
