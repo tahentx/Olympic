@@ -4,7 +4,7 @@ session_start();
 
 function assignSessionKey ($username) {
 	$sessionID = session_id();
-	$_SESSION['logged_in_user'] = $username;
+	$_SESSION['logged_in_user'] = $username;w
 	return $session_id;
 }
 
