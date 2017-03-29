@@ -1,10 +1,12 @@
 <?php
 
+require "functions.php";
+
 function pageController() {
 	$data = [];
 	// $form = var_dump($_GET);
-	if(isset($_GET['count'])) {
-		$data['count'] = $_GET['count'];
+	if(inputHas['count'])) {
+		$data['count'] = inputGet('count');
 	} else {
 		$data['count'] = 0;
 	}
