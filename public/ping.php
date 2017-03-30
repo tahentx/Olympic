@@ -1,11 +1,12 @@
 <?php
 
 require "functions.php";
+require_once "input.php";
 
 function pageController() {
 	$data = [];
 	// $form = var_dump($_GET);
-	if(inputHas['count'])) {
+	if(Input::has(['count'])) {
 		$data['count'] = inputGet('count');
 	} else {
 		$data['count'] = 0;

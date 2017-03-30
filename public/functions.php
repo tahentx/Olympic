@@ -1,21 +1,22 @@
-<?php
-
-function inputHas($key){
-	if(isset($_REQUEST[$key])){
+<?php 
+function inputHas($key)
+{
+	if (isset($_REQUEST[$key])) {
 		return true;
 	} else {
-		return false;	
+		return false;
 	}
 }
-
-function inputGet($key){
+function inputGet($key)
+{
 	if (inputHas($key)) {
+		return $_REQUEST[$key];
 	} else {
 		return null;
 	}
 }
-
-function escape($input){
+function escape($input)
+{
 	return htmlspecialchars(strip_tags($input));
 }
 
