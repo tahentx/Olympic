@@ -7,29 +7,30 @@ class Pet
 	public $color;
 	public $name;
 
-	function eat()
+	public function eat()
 	{
-		$food = 'carrot';
+		$this->food[] = $food;
 		if ($this->weight < 10) {
 			echo "I need a $food";
 		}
 		return $this->eat();
 	}
 
-	function move()
+	public function move()
 	{
 		$energy = range(0, 100);
 		if ($energy =< 20){
 			echo "I'm tired";
+			eat():
 		}	else {
-			
+			//write move functionality
 		}
 	}
 
-	function sleep()
-	{
-		echo $this->age;
-	}
+	// function sleep()
+	// {
+		
+	// }
 
 }
 

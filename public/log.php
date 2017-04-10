@@ -12,17 +12,17 @@ class Log {
 	}
 
 
-	function logMessage($level, $message) {
+	public function logMessage($level, $message) {
 		$timestamp = date("Y-m-d H:i:s");
 		$logEntry = PHP_EOL . "$timestamp - $level - $message";
-		$fwrite($this->handle, $logEntry);
+		$fwrite($handle, $logEntry);
 	}
 
-	function logInfo($message) {
+	public function logInfo($message) {
 		$this->logMessage("INFO", $message) . PHP_EOL;
 	}
 
-	function logError($message) {
+	public function logError($message) {
 		$this->logMessage("ERROR", $message) . PHP_EOL;
 	}
 
