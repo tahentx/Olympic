@@ -20,6 +20,4 @@ catch (PDOException $e) {
 	echo $e->getMessage(), PHP_EOL;
 }
 
-
-
 ?>

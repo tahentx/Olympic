@@ -30,14 +30,18 @@ $parks = [
 
 ];
 
+$statement = $connection->prepare("INSERT INTO national_parks (name, area_in_acres, date_established, location, description) VALUES (:name, :area_in_acres, :date_established, :location, :description");
+
 foreach ($parks as $park) {
+	$statement->bindValue(':name', $park['name'],PDO::PARAM_STR);
+	$statement->bindValue(':area_in_acres', $park['area_in_acres'],PDO::PARAM_STR);
+	$statement->bindValue(':date_established', $park['date_established'],PDO::PARAM_STR);
+	$statement->bindValue(':location', $park['location'],PDO::PARAM_STR);
+	$statement->bindValue(':description', $park['description'],PDO::PARAM_STR);	
 
-$query = "INSERT INTO national_parks (name, area_in_acres, date_established, location)
-	VALUES ('{$park['name']}', '{$park['area_in_acres']}', '{$park['date_established']}', '{$park['location']}')";
+	$connection->execute();
 
-$connection->exec($query);
-
-echo "Insert ID:" . $connection->lastInsertId() . PHP_EOL;
+	echo "Insert ID:" . $connection->lastInsertId() . PHP_EOL;
 
 };
 
