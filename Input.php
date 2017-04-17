@@ -9,6 +9,34 @@ class Input
      * @param string $key index to look for in request
      * @return boolean whether value exists in $_POST or $_GET
      */
+    public static function getdate($key){
+        $input = self::get($key);
+        $date = DateTime::createFromFormat('Y-m-d', $input);
+        if (!$date) {
+            throw new Exception("$key must be in the YYYY-MM-DD format");
+        }
+        return $input;
+    }
+
+    public static function getString($key){
+        $input = self::get($key);
+        if(!is_string($input)){
+            throw new Exception("Input for $key must be a number.");
+        }
+        return $input;
+    }
+
+    public static function getNumber($key){
+        $input = self::get($key);
+        if(!is_numeric($input)){
+            throw new Exception("Input for $key must be a number.");
+        }
+        return $input;
+    }
+
+
+
+
     public static function has($key)
     {
            if (isset($_REQUEST[$key])) {

@@ -2,7 +2,7 @@
 
 require __DIR__ . "/db_connection.php";
 
-require __DIR__ . "/../input.php";
+require __DIR__ . "/input.php";
 
 function getLastPage ($connection, $limit){
 	$statement = $connection->query("SELECT count(*) from parks");
@@ -24,6 +24,7 @@ function controlRequests ($page) {
 	}
 }
 
+
 function pageController ($connection){
 	$data = [];
 	
@@ -39,6 +40,30 @@ function pageController ($connection){
 	$data['lastPage'] = $lastPage;
 
 	return $data;
+
+	$errors = [];
+
+	try {
+	$park->name = Input::getString('name'); 
+	} catch (Exception $e) {
+	    echo 'An error occurred: ' . $e->getMessage() . PHP_EOL;
+	}
+
+	try {
+	$park->date_established = Input::getDate('date_established');
+	}	catch (Exception $e) {
+		echo 'There was an issue with your date format: ' . $e->getMessage() . PHP_EOL;
+	}	
+
+	try {
+	$park->area_in_acres = Input::getNumber('area_in_acres');
+	}	catch (Exception $e) {
+		echo 'There was an issue with your number input: ' . $e->getMessage() . PHP_EOL;
+	}
+
+	if (!empty($errors)){
+		echo "There was an issue with your input";		
+	}
 }
 
 extract(pageController($connection));

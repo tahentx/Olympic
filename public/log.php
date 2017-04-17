@@ -2,9 +2,9 @@
 
 class Log {
 
-	public $filename;
+	protected $filename;
 
-	public $handle;
+	protected $handle;
 
 	function __constructor($prefix = "log"){
 		$this->filename = $prefix . "-" . date("YYYY-MM-DD") . ".log";

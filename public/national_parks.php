@@ -14,7 +14,6 @@ require __DIR__ . "/../input.php";
 function getLastPage ($connection, $limit){
 
 	$statement = $connection->prepare("SELECT count(*) from national_parks");
-	// $statement = $connection->query("SELECT count(*) from national_parks");
 	$count = $statement->fetch()[0]; 
 	$lastPage = ceil($count / $limit);
 	return $lastPage;
@@ -38,10 +37,9 @@ function controlRequests ($page) {
 	}
 }
 
+
 function addParktoDatabase ($connection) {
-// $name = if (isset($_POST['name']) {
-// 	$name->bindValue
-// }
+
 	if ($_POST){
 		
 		$insert = 'INSERT INTO national_parks (name, area_in_acres, date_established, location, description) VALUES (:name, :area_in_acres, :date_established, :location, :description)';
@@ -60,7 +58,10 @@ function addParktoDatabase ($connection) {
 
 }
 
-
+function validateDate($connection, $date) {
+	$d = DateTime::createFromFormat('Y-m-d', $date);
+    return $d && $d->format('Y-m-d') === $date;
+}
 
 function pageController ($connection){
 	addParktoDatabase($connection);
@@ -95,6 +96,7 @@ extract(pageController($connection));
 <body>
 <h1>National Parks</h1>
 
+
 <table>
 	<tr>
 		<th>Name</th>
@@ -114,6 +116,8 @@ extract(pageController($connection));
 
 <a href="/national_parks.php?page=<?= $page-1?>">Previous</a>
 <a href="/national_parks.php?page=<?= $page+1?>">Next</a>
+
+
 
  <form method="POST" class="navbar-form navbar-left">
     
@@ -142,7 +146,7 @@ extract(pageController($connection));
 	<input type="text" name="description" value="" class="form-control" placeholder="Description">
     </div>
     
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" class="btn btn-default">Add Park</button>
  
  </form>
 
