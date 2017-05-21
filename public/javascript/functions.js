@@ -5,10 +5,11 @@ var myNameIs = "Todd"; // TODO: Fill in your name here.
 
 
 function sayHello(name) {
-	return ("What's up" + name);
+	console.log("What's up" + name);
 }
 
 sayHello(myNameIs);
+
 
 /**
  * TODO:
@@ -25,6 +26,8 @@ sayHello(myNameIs);
  * Store the result of the function call in a variable named 'helloMessage'.
  * console.log 'helloMessage' to check your work
  */
+
+
 
 // Don't modify the following line, it generates a random number between 1 and
 // 100 and stores it in a variable named random
