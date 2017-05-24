@@ -5,7 +5,7 @@ var myNameIs = "Todd"; // TODO: Fill in your name here.
 
 
 function sayHello(name) {
-	console.log("What's up" + name);
+	console.log("What's up " + name);
 }
 
 sayHello(myNameIs);
